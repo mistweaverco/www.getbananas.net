@@ -1,0 +1,41 @@
+{
+	"name": "www.getbananas.net",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"postbuild": "svelte-sitemap -d https://getbananas.net -i google*.html",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+		"test": "vitest",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@fontsource/indie-flower": "5.1.0",
+		"@sveltejs/adapter-auto": "3.0.0",
+		"@sveltejs/adapter-static": "3.0.1",
+		"@sveltejs/kit": "2.5.4",
+		"@sveltejs/vite-plugin-svelte": "3.0.0",
+		"@types/eslint": "8.56.0",
+		"eslint": "8.56.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-svelte": "2.35.1",
+		"husky": "9.0.11",
+		"install": "0.13.0",
+		"mdsvex": "0.11.0",
+		"npm": "^10.8.2",
+		"prettier": "3.1.1",
+		"prettier-plugin-svelte": "3.1.2",
+		"svelte": "4.2.7",
+		"svelte-check": "3.6.0",
+		"svelte-sitemap": "2.6.0",
+		"typescript": "5.4.3",
+		"vite": "^5.3.5",
+		"vitest": "1.2.0"
+	},
+	"type": "module"
+}
