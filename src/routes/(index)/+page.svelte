@@ -111,7 +111,7 @@
 					</a>
 				</button>
 				<button class="button is-mac">
-					<a href="{DOWNLOAD_BASE}bananas_arm64.dmg">
+					<a href="{DOWNLOAD_BASE}bananas_universal.dmg">
 						<span class="icon">
 							<i class="fa-brands fa-apple"></i>
 						</span>
