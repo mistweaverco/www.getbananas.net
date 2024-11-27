@@ -76,6 +76,12 @@
 				alt="Download latest release"
 			/>
 		</a>
+		<a href="https://github.com/mistweaverco/bananas">
+			<img
+				src="https://img.shields.io/github/downloads/mistweaverco/bananas/total.svg?style=for-the-badge"
+				alt="Downloads counter"
+			/>
+		</a>
 		<a href="https://typescriptlang.org">
 			<img src="/badge-typescript.svg" alt="Made with TypeScript" />
 		</a>
