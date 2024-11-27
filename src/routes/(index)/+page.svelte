@@ -2,32 +2,25 @@
 	import './modal.css';
 	import HeadComponent from '$lib/HeadComponent.svelte';
 	import GitHubIcon from '$lib/icons/fontawesome/github.svelte';
-	import { onMount } from 'svelte';
 	const DOWNLOAD_BASE = 'https://github.com/mistweaverco/bananas/releases/latest/download/';
 
 	/**
-	 * @type {HTMLDivElement}
+	 * @type {boolean}
 	 */
-	let modalLinuxDownload;
+	let modalLinuxDownloadIsActive = false;
 
+	const toggleModalLinuxDownload = () => {
+		modalLinuxDownloadIsActive = !modalLinuxDownloadIsActive;
+	};
 	/**
-	 * @type {HTMLButtonElement}
+	 * @param {MouseEvent} evt
+	 * @this {HTMLAnchorElement}
 	 */
-	let linuxDownloadButton;
-
-	/**
-	 * @type {HTMLButtonElement}
-	 */
-	let modelLinuxDownloadCloseButton;
-
-	onMount(() => {
-		linuxDownloadButton.addEventListener('click', () => {
-			modalLinuxDownload.classList.toggle('is-active');
-		});
-		modelLinuxDownloadCloseButton.addEventListener('click', () => {
-			modalLinuxDownload.classList.remove('is-active');
-		});
-	});
+	function showFullScreenImage(evt) {
+		evt.preventDefault();
+		const img = /** @type {HTMLImageElement} */ (this.querySelector('img'));
+		img.requestFullscreen();
+	}
 </script>
 
 <HeadComponent
@@ -38,14 +31,10 @@
 	}}
 />
 
-<div class="modal" bind:this={modalLinuxDownload}>
+<div class="modal {modalLinuxDownloadIsActive ? 'is-active' : ''}">
 	<div class="modal-background"></div>
 	<div class="modal-content">
-		<button
-			bind:this={modelLinuxDownloadCloseButton}
-			class="modal-close is-large"
-			aria-label="close"
-		>
+		<button on:click={toggleModalLinuxDownload} class="modal-close is-large" aria-label="close">
 			<span aria-hidden="true">&times;</span>
 		</button>
 		<div class="box">
@@ -118,7 +107,7 @@
 						<span>Mac</span>
 					</a>
 				</button>
-				<button bind:this={linuxDownloadButton} class="button is-linux">
+				<button on:click={toggleModalLinuxDownload} class="button is-linux">
 					<span class="icon">
 						<i class="fa-brands fa-linux"></i>
 					</span>
@@ -134,11 +123,25 @@
 			</a>
 		</div>
 		<h2>Multiple cursors 🖱️</h2>
-		<p>Share your screen with anyone, anywhere, anytime and collaborate with multiple cursors.</p>
-		<img src="/showcase-multiple-cursors.jpg" class="rounded" alt="Multiple cursors showcase" />
+		<p>
+			Share your screen 🖥️ with anyone 🌈, anywhere 🏝️, anytime 🕗 and collaborate with multiple
+			cursors.
+		</p>
+		<a
+			href="/showcase-multiple-cursors.png"
+			on:click={showFullScreenImage}
+			target="_blank"
+			rel="noopener"
+		>
+			<img src="/showcase-multiple-cursors.png" class="rounded" alt="Multiple cursors showcase" />
+		</a>
+		<p>
+			Utilize the awesome Bananas 🍌 ping feature ✨ where you can mark important 🚨 areas with your
+			remote cursor.
+		</p>
 		<h2>Zero configuration 🚫</h2>
 		<p>
-			No need to sign up, log in, or create an account. Just share your screen and start
+			No need to sign up, log in, or create an account 🥷. Just share your screen and start
 			collaborating.
 		</p>
 		<h2>Privacy first 🕵️</h2>
