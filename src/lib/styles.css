@@ -14,6 +14,10 @@
 	color: var(--color-text);
 }
 
+:not(:root):fullscreen::backdrop {
+	background-color: #494d52;
+}
+
 html,
 body {
 	margin: 0;
