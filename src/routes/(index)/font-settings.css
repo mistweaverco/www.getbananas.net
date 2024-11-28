@@ -1,0 +1,12 @@
+body {
+	font-family:
+		Inter Variable,
+		ui-sans-serif,
+		system-ui,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
+		Segoe UI Symbol,
+		'Noto Color Emoji';
+	font-feature-settings: 'ss01', 'cv05', 'cv06';
+}

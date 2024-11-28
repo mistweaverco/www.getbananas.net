@@ -1,5 +1,6 @@
 <script>
 	import './modal.css';
+	import './font-settings.css';
 	import HeadComponent from '$lib/HeadComponent.svelte';
 	import GitHubIcon from '$lib/icons/fontawesome/github.svelte';
 	const DOWNLOAD_BASE = 'https://github.com/mistweaverco/bananas/releases/latest/download/';
@@ -214,11 +215,6 @@
 		text-decoration: none;
 	}
 
-	header,
-	p {
-		font-family: 'Indie Flower', cursive;
-	}
-
 	header {
 		font-size: 2rem;
 	}
@@ -236,7 +232,6 @@
 		width: 85%;
 		margin: auto;
 		min-height: calc(100vh - 4rem);
-		font-family: monospace;
 		max-width: 530px;
 	}
 
