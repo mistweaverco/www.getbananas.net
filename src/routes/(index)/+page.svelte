@@ -74,27 +74,29 @@
 		<header>Bananas Screen Sharing</header>
 		<a href="https://github.com/mistweaverco/bananas/releases/latest">
 			<img
+				class="badge"
 				src="https://img.shields.io/github/v/release/mistweaverco/bananas?style=for-the-badge"
 				alt="Download latest release"
 			/>
 		</a>
 		<a href="https://github.com/mistweaverco/bananas">
 			<img
+				class="badge"
 				src="https://img.shields.io/github/downloads/mistweaverco/bananas/total.svg?style=for-the-badge"
 				alt="Downloads counter"
 			/>
 		</a>
 		<a href="https://typescriptlang.org">
-			<img src="/badge-typescript.svg" alt="Made with TypeScript" />
+			<img class="badge" src="/badge-typescript.svg" alt="Made with TypeScript" />
 		</a>
 		<a href="https://electronjs.org">
-			<img src="/badge-electron.svg" alt="Powered by Electron" />
+			<img class="badge" src="/badge-electron.svg" alt="Powered by Electron" />
 		</a>
 		<a href="https://v2.vitejs.dev">
-			<img src="/badge-vite.svg" alt="Powered by Vite" />
+			<img class="badge" src="/badge-vite.svg" alt="Powered by Vite" />
 		</a>
 		<a href="https://discord.gg/BeN43eJVWS">
-			<img src="/badge-discord.svg" alt="Join our Discord" />
+			<img class="badge" src="/badge-discord.svg" alt="Join our Discord" />
 		</a>
 		<p>Bananas 🍌, cross-platform, p2p screen 🖥️ sharing 📡 made simple ⚡.</p>
 		<div class="see-the-source">
@@ -122,13 +124,22 @@
 					<span>Linux</span>
 				</button>
 			</div>
-			<a
-				href="https://github.com/mistweaverco/bananas"
-				title="Check out the source code on GitHub"
-				class="github-icon"
-			>
-				<GitHubIcon />
-			</a>
+			<div class="links">
+				<a
+					href="https://github.com/mistweaverco/bananas"
+					title="Check out the source code on GitHub"
+					class="github-icon"
+				>
+					<GitHubIcon />
+				</a>
+				<a
+					href="https://mistweaverco.com/"
+					title="Brought to you by mistweaverco, a small team of developers who love to create and share their work with the world."
+					class="github-icon"
+				>
+					<img src="/mistweaverco-logo.png" alt="mistweaverco" />
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

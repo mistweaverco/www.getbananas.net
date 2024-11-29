@@ -1,3 +1,6 @@
+img.badge {
+	margin: 0 0.2rem;
+}
 button.button {
 	padding: 0.2rem 0.5rem;
 	font-size: 0.8rem;
@@ -107,16 +110,23 @@ p {
 	border: 0 none;
 }
 
-.github-icon svg:hover {
-	fill: #ffcc00;
-}
-
 .github-icon svg {
 	transition: fill 0.5s;
 	display: inline-block;
 	cursor: pointer;
 	height: 32px;
 	width: 32px;
+}
+
+.links img {
+	height: 32px;
+	width: 32px;
+}
+.github-icon svg:hover,
+img.badge:hover,
+.button:hover,
+.links img:hover {
+	transform: scale(1.1);
 }
 
 img {
