@@ -1,3 +1,6 @@
+.like-emoji button:hover {
+	transform: none;
+}
 img.badge {
 	margin: 0 0.2rem;
 }
@@ -134,4 +137,7 @@ img {
 }
 .modal .box button {
 	margin: 0 0.2rem;
+}
+.is-hidden {
+	display: none;
 }

@@ -4,12 +4,23 @@
 	import './grid.css';
 	import HeadComponent from '$lib/HeadComponent.svelte';
 	import GitHubIcon from '$lib/icons/fontawesome/github.svelte';
+	import { onMount } from 'svelte';
 	const DOWNLOAD_BASE = 'https://github.com/mistweaverco/bananas/releases/latest/download/';
+
+	/**
+	 * @type {string}
+	 */
+	let emojiHiddenClass = '';
 
 	/**
 	 * @type {boolean}
 	 */
 	let modalLinuxDownloadIsActive = false;
+
+	/**
+	 * @type {boolean}
+	 */
+	let modalEmojiIsActive = false;
 
 	const toggleModalLinuxDownload = () => {
 		modalLinuxDownloadIsActive = !modalLinuxDownloadIsActive;
@@ -23,6 +34,29 @@
 		const img = /** @type {HTMLImageElement} */ (this.querySelector('img'));
 		img.requestFullscreen();
 	}
+	/**
+	 * @param {MouseEvent} evt
+	 */
+	function likeEmojis(evt) {
+		const button = /** @type {HTMLButtonElement} */ (evt.currentTarget);
+		const status = /** @type {string} */ (button.dataset.emoji);
+		emojiHiddenClass = status === 'true' ? '' : 'is-hidden';
+		modalEmojiIsActive = false;
+		localStorage.setItem('likeEmojis', status);
+	}
+
+	onMount(() => {
+		const likeEmojis = localStorage.getItem('likeEmojis');
+		if (likeEmojis === 'true') {
+			emojiHiddenClass = '';
+			return;
+		}
+		if (likeEmojis === 'false') {
+			emojiHiddenClass = 'is-hidden';
+			return;
+		}
+		modalEmojiIsActive = true;
+	});
 </script>
 
 <HeadComponent
@@ -32,6 +66,17 @@
 			'Bananas, cross-platform, p2p screen sharing made simple. Share your screen with anyone, anywhere, anytime.'
 	}}
 />
+
+<div class="modal like-emoji {modalEmojiIsActive ? 'is-active' : ''}">
+	<div class="modal-background"></div>
+	<div class="modal-content">
+		<div class="box">
+			<p>Do you like emojis?</p>
+		</div>
+		<button class="button is-small" data-emoji="true" on:click={likeEmojis}> Yes </button>
+		<button class="button is-small" data-emoji="false" on:click={likeEmojis}> No </button>
+	</div>
+</div>
 
 <div class="modal {modalLinuxDownloadIsActive ? 'is-active' : ''}">
 	<div class="modal-background"></div>
@@ -98,7 +143,12 @@
 		<a href="https://discord.gg/BeN43eJVWS">
 			<img class="badge" src="/badge-discord.svg" alt="Join our Discord" />
 		</a>
-		<p>Bananas 🍌, cross-platform, p2p screen 🖥️ sharing 📡 made simple ⚡.</p>
+		<p>
+			Bananas <span aria-hidden="true" class={emojiHiddenClass}>🍌</span>, cross-platform, p2p
+			screen <span aria-hidden="true" class={emojiHiddenClass}>🖥️</span>
+			sharing <span aria-hidden="true" class={emojiHiddenClass}>📡</span> made simple
+			<span aria-hidden="true" class={emojiHiddenClass}>⚡</span>.
+		</p>
 		<div class="see-the-source">
 			<div class="download-buttons">
 				<button class="button is-windows">
@@ -147,10 +197,12 @@
 	<div class="inner">
 		<div class="grid has-3-cols">
 			<div class="item">
-				<h2>Multiple cursors 🖱️</h2>
+				<h2>Multiple cursors <span aria-hidden="true" class={emojiHiddenClass}>🖱️</span></h2>
 				<p>
-					Share your screen 🖥️ with anyone 🌈, anywhere 🏝️, anytime 🕗 and collaborate with multiple
-					cursors.
+					Share your screen <span aria-hidden="true" class={emojiHiddenClass}>🖥️</span> with anyone
+					<span aria-hidden="true" class={emojiHiddenClass}>🌈</span>, anywhere
+					<span aria-hidden="true" class={emojiHiddenClass}>🏝️</span>, anytime
+					<span aria-hidden="true" class={emojiHiddenClass}>🕗</span> and collaborate with multiple cursors.
 				</p>
 				<a
 					href="/showcase-multiple-cursors.png"
@@ -165,19 +217,25 @@
 					/>
 				</a>
 				<p>
-					Utilize the awesome Bananas 🍌 ping feature ✨ where you can mark important 🚨 areas with
-					your remote cursor.
+					Utilize the awesome Bananas <span aria-hidden="true" class={emojiHiddenClass}>🍌</span>
+					ping feature <span aria-hidden="true" class={emojiHiddenClass}> ✨</span> where you can
+					mark important <span aria-hidden="true" class={emojiHiddenClass}> 🚨</span> areas with your
+					remote cursor.
 				</p>
 			</div>
 			<div class="item">
-				<h2>Zero configuration 🚫</h2>
+				<h2>Zero configuration <span aria-hidden="true" class={emojiHiddenClass}>🚫</span></h2>
 				<p>
-					No need to sign up, log in, or create an account 🥷. Just share your screen and start
-					collaborating.
+					No need to sign up, log in, or create an account <span
+						aria-hidden="true"
+						class={emojiHiddenClass}>🥷</span
+					>. Just share your screen and start collaborating.
 				</p>
 				<p>
-					Bananas 🍌 creates a unique 🌟 connection url 🌐 for you to share with your friends,
-					family, or colleagues.
+					Bananas <span aria-hidden="true" class={emojiHiddenClass}>🍌</span> creates a unique
+					<span aria-hidden="true" class={emojiHiddenClass}>🌟</span>
+					connection url <span aria-hidden="true" class={emojiHiddenClass}> 🌐</span> for you to share
+					with your friends, family, or colleagues.
 				</p>
 				<p>
 					These urls should be treated as <strong>sensitive</strong> information.
@@ -189,7 +247,7 @@
 				</p>
 			</div>
 			<div class="item">
-				<h2>Privacy first 🕵️</h2>
+				<h2>Privacy first <span aria-hidden="true" class={emojiHiddenClass}>🔒</span></h2>
 				<p>
 					Your data is
 					<a href="https://github.com/mistweaverco/bananas?tab=readme-ov-file#1-data-collection">
