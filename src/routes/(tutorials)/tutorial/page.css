@@ -1,0 +1,143 @@
+.like-emoji button:hover {
+	transform: none;
+}
+img.badge {
+	margin: 0 0.2rem;
+}
+button.button {
+	padding: 0.2rem 0.5rem;
+	font-size: 0.8rem;
+	border-radius: 5px;
+	border: 0 none;
+	cursor: pointer;
+}
+.button.is-windows {
+	background-color: #0078d4;
+	color: #fff;
+}
+.button.is-mac {
+	background-color: #000;
+	color: #fff;
+}
+.button.is-debian {
+	background-color: #a80030;
+	color: #fff;
+}
+.button.is-linux {
+	background-color: #dd4814;
+	color: #fff;
+}
+.button.is-snap {
+	background-color: #dd4814;
+	color: #fff;
+}
+.button.is-appimage {
+	background-color: #4e9a06;
+	color: #fff;
+}
+
+.container.is-intro {
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.container.is-more {
+	text-align: center;
+	font-size: 1.5rem;
+	margin-bottom: 3rem;
+	width: 1200px;
+	max-width: 100%;
+}
+
+img.rounded {
+	border-radius: 20px;
+}
+
+.download-buttons {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.download-buttons button {
+	margin: 0 0.2rem;
+}
+
+button a {
+	color: #fff;
+	text-decoration: none;
+}
+
+header {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.3rem;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+.container.is-more p {
+	font-size: 0.8rem;
+}
+
+.container.is-more a {
+	text-decoration: underline;
+	color: #ffcc00;
+}
+
+.container.is-intro .inner {
+	text-align: center;
+	width: 85%;
+	margin: auto;
+	max-width: 530px;
+}
+
+.container.is-more .inner {
+	text-align: center;
+	margin: auto;
+}
+
+.see-the-source {
+	padding-bottom: 3rem;
+	margin-bottom: 3rem;
+	border-bottom: 1px solid #333;
+}
+
+.see-the-source a {
+	color: #fff;
+	text-decoration: none;
+	border: 0 none;
+}
+
+.github-icon svg {
+	transition: fill 0.5s;
+	display: inline-block;
+	cursor: pointer;
+	height: 32px;
+	width: 32px;
+}
+
+.links img {
+	height: 32px;
+	width: 32px;
+}
+.github-icon svg:hover,
+img.badge:hover,
+.button:hover,
+.links img:hover {
+	transform: scale(1.1);
+}
+
+img {
+	max-width: 100%;
+}
+.modal .box button {
+	margin: 0 0.2rem;
+}
+.is-hidden {
+	display: none;
+}
