@@ -35,6 +35,10 @@ button.button {
 	background-color: #4e9a06;
 	color: #fff;
 }
+.button.is-flatpak {
+	background-color: #81c0eb;
+	color: #fff;
+}
 
 .container.is-intro {
 	text-align: center;

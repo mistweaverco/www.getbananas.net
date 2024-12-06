@@ -104,9 +104,17 @@
 			<button class="button is-appimage">
 				<a href="{DOWNLOAD_BASE}bananas_x86_64.AppImage">
 					<span class="icon">
-						<i class="fa-solid fa-cube"></i>
+						<i class="fa-solid fa-gear"></i>
 					</span>
 					<span>.AppImage</span>
+				</a>
+			</button>
+			<button class="button is-flatpak">
+				<a href="{DOWNLOAD_BASE}bananas_x86_64.flatpak">
+					<span class="icon">
+						<i class="fa-solid fa-cube"></i>
+					</span>
+					<span>.flatpak</span>
 				</a>
 			</button>
 		</div>
