@@ -4,13 +4,13 @@ This is the source code for [getbananas.net](https://getbananas.net).
 
 ## Developing
 
-Once you've cloned the project and installed dependencies with `npm install`, start a development server:
+Once you've cloned the project and installed dependencies with `bun install`, start a development server:
 
 ```sh
-npm run dev
+bun run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run dev -- --open
 ```
 
 ## Building
@@ -18,7 +18,7 @@ npm run dev -- --open
 To create a production version of this app:
 
 ```sh
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `bun run preview`.
